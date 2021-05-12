@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="AbhishekAutomationFrameWork">
+    <listeners>
+        <listener class-name="main.java.utility.SuiteListeners"></listener>
+    </listeners>
+    <test name="TestAutomation">
+        <parameter name="browsername" value="chrome"></parameter>
+        <classes>
+            <class name="TestCases.loginTestCase"/>
+        </classes>
+    </test>
+</suite> <!-- Suite -->
