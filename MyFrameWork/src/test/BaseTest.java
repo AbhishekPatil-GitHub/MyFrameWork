@@ -28,7 +28,7 @@ public class BaseTest {
 
 
 
-    @BeforeTest
+    @BeforeSuite
     public void beforeSuite(){
         htmlReporter=new ExtentHtmlReporter(System.getProperty("user.dir")+File.separator+"Report"+File.separator+"AutomationReport.html");
         htmlReporter.config().setEncoding("utf-8");
