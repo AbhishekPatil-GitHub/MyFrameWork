@@ -29,7 +29,7 @@ public class BaseTest {
 
 
     @BeforeTest
-    public void beforeTest(){
+    public void beforeSuite(){
         htmlReporter=new ExtentHtmlReporter(System.getProperty("user.dir")+File.separator+"Report"+File.separator+"AutomationReport.html");
         htmlReporter.config().setEncoding("utf-8");
         htmlReporter.config().setDocumentTitle("Automation Report");
@@ -41,7 +41,7 @@ public class BaseTest {
     }
 
 
-    @BeforeMethod
+    @BeforeTest
     @Parameters(value = {"browsername"})
     public void beforeMethod(String browsername, Method testMethod){
         logger=extent.createTest(testMethod.getName());
@@ -52,7 +52,7 @@ public class BaseTest {
 
     }
 
-    @AfterMethod
+    @AfterTest
     public void afterMethod(ITestResult result){
         if (result.getStatus()==ITestResult.SUCCESS){
             String methodName=result.getMethod().getMethodName();
@@ -70,7 +70,7 @@ public class BaseTest {
 
     }
 
-    @AfterTest
+    @AfterSuite
     public void afterTest(){
         extent.flush();
 
